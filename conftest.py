@@ -5,7 +5,6 @@ from data import Url,generate_random_string
 
 @pytest.fixture
 def create_courier():
-    
     payload = {
         "login": generate_random_string(10),
         "password": generate_random_string(10),

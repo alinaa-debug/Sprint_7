@@ -19,7 +19,6 @@ class TestCourier:
         payload = {
     "login": "ninja",
     "firstName": "saske"}    
-
         r = requests.post(f'{Url.Base_url}{Url.Create_url}',data = payload)
         assert r.status_code == 400
         assert "Недостаточно данных " in r.text

@@ -8,6 +8,7 @@ class CreateOrder():
     ["GRAY"],
     ["BLACK","GRAY"],
     [] ])
+    
     def test_create_order(self,colors):
         data = {
     "firstName": "Naruto",

@@ -2,7 +2,6 @@ import requests
 from data import Url
 
 class LoginCourier:
-    
     def test_login_courier(self, login_courier):      
         response = login_courier
         assert  response.status_code == 200
