@@ -9,7 +9,6 @@ class LoginCourier:
     
     def test_missing_in_login_password(self, create_courier):
         payload, _ = create_courier
-
         login_data = {
             "login": payload["login"]
         }

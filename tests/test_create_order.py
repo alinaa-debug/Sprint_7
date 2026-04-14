@@ -3,12 +3,13 @@ import requests
 from data import Url
 
 class CreateOrder():
+    
     @pytest.mark.parametrize("colors", [ 
     ["BLACK"],
     ["GRAY"],
     ["BLACK","GRAY"],
     [] ])
-    
+
     def test_create_order(self,colors):
         data = {
     "firstName": "Naruto",

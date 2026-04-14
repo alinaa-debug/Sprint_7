@@ -14,8 +14,7 @@ def create_courier():
     
     response = requests.post(
         f'{Url.Base_url}{Url.Create_url}',
-        data=payload
-    )
+        data=payload)
     return payload, response
 
 @pytest.fixture
