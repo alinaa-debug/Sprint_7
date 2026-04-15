@@ -15,8 +15,7 @@ class TestCourier:
     
     @allure.title("Создание дубликата курьера")
     @allure.step("Повторная отправка запроса с теми же данными.")
-    def test_duplicate_courier(self, create_courier):
-        
+    def test_duplicate_courier(self, create_courier): 
         requests.post(
             f'{Url.Base_url}{Url.Create_url}',data = create_courier
         )

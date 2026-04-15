@@ -9,8 +9,7 @@ def courier_data():
         "password": generate_random_string(10),
         "firstName": generate_random_string(10)
     }
-
-    
+   
 
 @pytest.fixture
 def create_courier(courier_data):

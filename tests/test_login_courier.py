@@ -1,7 +1,6 @@
 import requests
 from data import Url
 import allure
-
 class LoginCourier:
     @allure.title('Создание курьера')
     def test_login_courier(self, login_courier):      

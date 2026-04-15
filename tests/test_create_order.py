@@ -2,7 +2,6 @@ import pytest
 import requests
 from data import Url
 import allure 
-
 class CreateOrder():
     @allure.title("Создание заказа с разными цветами ")
     @pytest.mark.parametrize("colors", [ 

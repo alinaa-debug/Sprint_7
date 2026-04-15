@@ -3,7 +3,6 @@ from data import Url
 import allure 
 
 class OrderList:
-
     @allure.title("Получение списка заказов")
     @allure.step("Отправка запроса на получение списка заказов")
     def test_order_list(self):
