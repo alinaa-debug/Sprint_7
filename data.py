@@ -8,8 +8,19 @@ class Url:
     Create_order = '/api/v1/orders'
     
 
+
 def generate_random_string(length):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(length))  
 
+class Courier:
+    courier_without_password = {
+    "login": "ninja",
+    "firstName": "saske"
+}
+
+    courier_without_login = {
+    "password": "1234",
+    "firstName": "saske"
+} 
     
