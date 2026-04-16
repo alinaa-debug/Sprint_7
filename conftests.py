@@ -1,29 +1,23 @@
-import pytest
-import requests
-from data import Url,generate_random_string
+import pytest 
+from helpers import (generate_courier_data, 
+                     create_courier_request,
+                     login_courier_request,
+                     delete_courier_request,
+                     build_login_data)
+
 
 @pytest.fixture
-def courier_data():
-    return {
-        "login": generate_random_string(10),
-        "password": generate_random_string(10),
-        "firstName": generate_random_string(10)
-    }
-   
+def create_courier():
+    data = generate_courier_data()
+    create_courier_request(data)
 
-@pytest.fixture
-def create_courier(courier_data):
+    yield data
     
-    requests.post(f'{Url.Base_url}{Url.Create_url}',data=courier_data)
+    login_data = build_login_data(data)
 
-    yield courier_data
-    
-    login_data ={'login':courier_data['login'],
-                  'password': courier_data['password']}
-
-    login_response =requests.post(f'{Url.Base_url}{Url.Login_url}',data= login_data)
+    login_response = login_courier_request(login_data)
     if login_response.status_code == 200:
         courier_id = login_response.json()['id']
-    requests.delete(f'{Url.Base_url}{Url.Create_url}/{courier_id}')
+        delete_courier_request(courier_id)
 
     
